@@ -1,6 +1,6 @@
 # WEB102 Prework - *Seamonster Crowdfunding*
 
-## LiceCap does not work for me. If you want to see the walkthrough, you have to download the file by clicking 'view raw'. 
+
 
 Submitted by: **Mutawakil Rabiu**
 
@@ -82,7 +82,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented features:
 
-<img src="walk2.mp4" title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src="walkthrough.mp4" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
 
