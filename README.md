@@ -1,5 +1,7 @@
 # WEB102 Prework - *Seamonster Crowdfunding*
 
+## LiceCap does not work for me. If you want to see the walkthrough, you have to download the file. 
+
 Submitted by: **Mutawakil Rabiu**
 
 **Sea Monster Crowdfunding** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
@@ -82,17 +84,13 @@ Here's a walkthrough of implemented features:
 
 <img src="walk2.mp4" title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
-<!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
-<!-- Recommended tools:
-[Kap](https://getkap.co/) for macOS
-[ScreenToGif](https://www.screentogif.com/) for Windows
-[peek](https://github.com/phw/peek) for Linux. -->
+
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 Adding the search Functionality
+Problem with uploading walthrough video
 
 ## License
 
