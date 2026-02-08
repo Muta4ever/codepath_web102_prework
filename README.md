@@ -1,23 +1,80 @@
-# WEB102 Prework - *Name of App Here*
+# WEB102 Prework - **
 
-Submitted by: **Your Name Here**
+Submitted by: **Mutawakil Rabiu**
 
-**Name of your app** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
+**** is a website for the company Sea Monster Crowdfunding that displays information about the games they have funded.
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-* [ ] The introduction section explains the background of the company and how many games remain unfunded.
-* [ ] The Stats section includes information about the total contributions and dollars raised as well as the top two most funded games.
-* [ ] The Our Games section initially displays all games funded by Sea Monster Crowdfunding
-* [ ] The Our Games section has three buttons that allow the user to display only unfunded games, only funded games, or all games.
+* [x] The introduction section explains the background of the company and how many games remain unfunded.
+* [x] The Stats section includes information about the total contributions and dollars raised as well as the top two most funded games.
+* [x] The Our Games section initially displays all games funded by Sea Monster Crowdfunding
+* [x] The Our Games section has three buttons that allow the user to display only unfunded games, only funded games, or all games.
 
 The following **optional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [x] List anything else that you can get done to improve the app functionality!
+
+#### What I Added:
+- **Real-time Search**: Live search that filters games as you type
+- **Interactive Dropdown**: Search results appear in a clean dropdown below the search bar
+- **Click-to-Filter**: Clicking on any search result instantly filters the games container to show only that specific game
+- **Smart Matching**: Searches through both game names and descriptions for better results
+- **Auto-hide Results**: Search dropdown automatically closes when a result is selected
+
+#### How It Works:
+1. User types in the search input field
+2. Search filters through game names and descriptions in real-time
+3. Matching results appear in a dropdown list with game name and description preview
+4. Clicking a result:
+   - Clears the search input
+   - Hides the dropdown
+   - Displays only the selected game in the main games container
+5. Users can then use the "Show All Games" button to return to the full list
+
+### 🎨 CSS Updates & Visual Enhancements
+
+#### Search Interface Styling:
+- **Modern Input Design**: 
+  - Rounded corners with subtle shadow
+  - Smooth focus animation that lifts the input
+  - Color-changing border (gray → lightblue) on focus
+  - Styled placeholder text with italic formatting
+
+- **Enhanced Dropdown**:
+  - Slide-down animation when results appear
+  - Custom scrollbar with lightblue accent color
+  - Professional shadow for depth
+  - Rounded corners matching the overall design
+
+- **Interactive Result Items**:
+  - Game controller emoji (🎮) prefix for each result
+  - Gradient background effect on hover
+  - Smooth slide-in animation (translateX effect)
+  - Left border accent appears on hover
+  - Clear visual feedback for clickable items
+
+#### Button Improvements:
+- Gradient backgrounds for modern look
+- Lift effect on hover (translateY animation)
+- Enhanced shadows for depth
+- Active state feedback when clicked
+- Consistent styling across all buttons
+
+#### Overall Design Polish:
+- **Transitions**: Smooth animations throughout (0.2s - 0.3s)
+- **Color Consistency**: Lightblue accent color used across search, buttons, and hover states
+- **Typography**: Improved font weights and line heights for better readability
+- **Shadows**: Layered shadows for professional depth effect
+- **Responsive Feedback**: All interactive elements provide visual feedback
+
+#### Game Cards Enhancement:
+- Added smooth transform on hover (lifts up 5px)
+- Enhanced transition effects for better user experience
 
 ## Video Walkthrough
 
