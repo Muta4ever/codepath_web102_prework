@@ -24,10 +24,11 @@ body {
     align-items: center;
 }
 
-.stats-container:hover{
+.stats-container:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
 }
+
 .stats-card {
     background-color: #a8b0bc;
     border-radius: 7px;
@@ -60,21 +61,178 @@ body {
     width: 300px;
     text-align: center;
     border-radius: 7px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .game-card:hover {
     cursor: pointer;
     box-shadow: 0 0 30px lightblue;
+    transform: translateY(-5px);
 }
 
 #button-container {
     text-align: center;
 }
 
+/* Search Input Styling */
+#search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 16px;
+    font-family: 'Cabin';
+    border: 2px solid #ddd;
+    border-radius: 12px;
+    box-sizing: border-box;
+    background-color: white;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#search-input:focus {
+    outline: none;
+    border-color: lightblue;
+    box-shadow: 0 4px 12px rgba(173, 216, 230, 0.4);
+    transform: translateY(-2px);
+}
+
+#search-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Search Results Container */
+#search-results {
+    position: relative;
+    background: white;
+    border: 2px solid lightblue;
+    border-radius: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    margin-top: 10px;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#search-results.hidden {
+    display: none;
+}
+
+/* Custom Scrollbar for Search Results */
+#search-results::-webkit-scrollbar {
+    width: 8px;
+}
+
+#search-results::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+#search-results::-webkit-scrollbar-thumb {
+    background: lightblue;
+    border-radius: 10px;
+}
+
+#search-results::-webkit-scrollbar-thumb:hover {
+    background: #87ceeb;
+}
+
+/* Search Result Items */
+.search-result-item {
+    display: flex;
+    gap: 15px;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0f0f0;
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.search-result-item::before {
+    content: '🎮';
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-result-item:hover {
+    background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+    transform: translateX(5px);
+    border-left: 4px solid lightblue;
+}
+
+.search-result-item:last-child {
+    border-bottom: none;
+}
+
+.search-result-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.result-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.result-info h4 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;
+}
+
+.result-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Button Styling */
 button {
     font-family: 'Cabin';
     border: none;
-    padding: 1%;
+    padding: 12px 24px;
     margin: 1%;
-    border-radius: 7px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    background: linear-gradient(135deg, #a8b0bc, #8a94a3);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background: linear-gradient(135deg, #8a94a3, #6d7685);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Empty State for Search */
+.search-result-item:only-child {
+    text-align: center;
+    color: #999;
+    font-style: italic;
 }

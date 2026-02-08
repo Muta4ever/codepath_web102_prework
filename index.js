@@ -59,6 +59,69 @@ function addGamesToPage(games) {
 
 addGamesToPage(GAMES_JSON);
 
+
+
+const searchInput = document.getElementById("search-input");
+const searchResults = document.getElementById("search-results");
+
+searchInput.addEventListener("input", (event)=>{
+    const searchTerm = event.target.value.toLowerCase();
+
+    if (searchTerm === "") {
+        searchResults.classList.add("hidden");
+        searchResults.innerHTML = "";
+        return;
+  }
+
+    const filtered = GAMES_JSON.filter((game) =>{
+        return game.name.toLowerCase().includes(searchTerm) ||
+               game.description.toLowerCase().includes(searchTerm) 
+           
+    });
+
+    displaySearchResults(filtered)
+
+});
+
+function displaySearchResults(games) {
+  searchResults.innerHTML = "";
+  searchResults.classList.remove("hidden");
+  
+  if (games.length === 0) {
+    searchResults.innerHTML = "<div class='search-result-item'>No games found</div>";
+    return;
+  }
+  
+  // Create clickable result items
+  games.forEach(game => {
+    const resultItem = document.createElement("div");
+    resultItem.classList.add("search-result-item");
+    
+    resultItem.innerHTML = `
+      <div class="result-info">
+        <p>${game.name}: ${game.description.substring(0, 60)}...</p>
+      </div>
+    `;
+    
+    // When clicked, show only that game
+    resultItem.addEventListener("click", () => {
+      // Clear search and hide results
+      searchInput.value = "";
+      searchResults.classList.add("hidden");
+      
+      // Clear the games container
+      deleteChildElements(gamesContainer);
+      
+      // Show only the clicked game
+      addGamesToPage([game]);
+      // Scroll to the games section
+    gamesContainer.scrollIntoView({ behavior: 'smooth' });
+    });
+    
+    searchResults.appendChild(resultItem);
+  });
+}
+
 /*************************************************************************************
  * Challenge 4: Create the summary statistics at the top of the page displaying the
  * total number of contributions, amount donated, and number of games on the site.
@@ -169,12 +232,20 @@ allBtn.addEventListener('click', ()=>{
 const descriptionContainer = document.getElementById("description-container");
 
 // use filter or reduce to count the number of unfunded games
-
-
+let unfundedGames = GAMES_JSON.filter((game) => {
+        return game.goal > game.pledged;
+     });
+let unfundedGamesCount = unfundedGames.length;
 // create a string that explains the number of unfunded games using the ternary operator
 
-
 // create a new DOM element containing the template string and append it to the description container
+
+let describe = document.createElement("p");
+
+describe.innerHTML = `A total of $${totalMoney.toLocaleString('en-US')} has been raised for ${totalGames} games. Currently, ${unfundedGamesCount} ${unfundedGamesCount === 1 ? "game remains": "games remain"} unfunded. We need your help to fund these amazing games!`
+
+descriptionContainer.appendChild(describe);
+
 
 /************************************************************************************
  * Challenge 7: Select & display the top 2 games
@@ -189,7 +260,15 @@ const sortedGames =  GAMES_JSON.sort( (item1, item2) => {
 });
 
 // use destructuring and the spread operator to grab the first and second games
+const [firstGame, secondGame] = sortedGames;
+
 
 // create a new element to hold the name of the top pledge game, then append it to the correct element
+const firstGameElement = document.createElement('p');
+firstGameElement.innerHTML = `${firstGame.name}`
+firstGameContainer.appendChild(firstGameElement)
 
 // do the same for the runner up item
+const secondGameElement = document.createElement('p');
+secondGameElement.innerHTML = `${secondGame.name}`
+secondGameContainer.appendChild(secondGameElement)
