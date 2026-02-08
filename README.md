@@ -1,6 +1,6 @@
 # WEB102 Prework - *Seamonster Crowdfunding*
 
-## LiceCap does not work for me. If you want to see the walkthrough, you have to download the file. 
+## LiceCap does not work for me. If you want to see the walkthrough, you have to download the file by clicking 'view raw'. 
 
 Submitted by: **Mutawakil Rabiu**
 
